@@ -5,12 +5,12 @@ class Dashboard extends React.Component {
     constructor(){
         super()
         this.state={
-            balls: 1,
-            strikes: 1
+            balls: 0,
+            strikes: 0
         }
     }
 
-    reset = (e) => {
+    handleHit = (e) => {
         // e.preventDefault();
         this.setState({
             balls: 0,
@@ -18,22 +18,20 @@ class Dashboard extends React.Component {
         })
     }
 
-    increaseBalls = (e) => {
+    handleBalls = (e) => {
         // e.preventDefault();
         this.setState({
             balls: this.state.balls + 1,
         })
     };
 
-    increaseStrikes = () =>{
+    handleStrikes = () =>{
         this.setState({
             strikes: this.state.strikes + 1
         })
     };
 
-    /*- a `foul` increases strikes up to 2. With no strikes, a foul makes it 1 strike. 
-    With 1 strike, a foul makes it 2 strikes. With two strikes a foul has no effect, 
-    count stays at 2 strikes.*/
+
     handleFoul = ()=>{
         if (this.state.strikes === 0 || this.state.strikes === 1){
             this.setState({
@@ -41,6 +39,8 @@ class Dashboard extends React.Component {
             })
         } 
     };
+
+    //- balls and strikes reset to 0 when a player reaches 3 strikes or 4 balls.
 
 
 
@@ -54,12 +54,12 @@ class Dashboard extends React.Component {
 
                 <div className='buttonDiv'>
                     <div>
-                        <button onClick={this.increaseStrikes}>Strike</button>
-                        <button onClick={this.increaseBalls}>Ball</button>
+                        <button onClick={this.handleStrikes}>Strike</button>
+                        <button onClick={this.handleBalls}>Ball</button>
                     </div>
                     <div>
                         <button onClick={this.handleFoul}>Foul</button>
-                        <button onClick={this.reset}>Hit</button>
+                        <button onClick={this.handleHit}>Hit</button>
                     </div>
                 </div>
             </div>
