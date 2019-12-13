@@ -10,8 +10,8 @@ export const subtract = (a, b) => a - b;
 function App() {
   return (
     <div className="App">
-      <Dashboard/>
       <Display/>
+      <Dashboard/>
     </div>
   );
 }
