@@ -31,6 +31,17 @@ class Dashboard extends React.Component {
         })
     };
 
+    /*- a `foul` increases strikes up to 2. With no strikes, a foul makes it 1 strike. 
+    With 1 strike, a foul makes it 2 strikes. With two strikes a foul has no effect, 
+    count stays at 2 strikes.*/
+    handleFoul = ()=>{
+        if (this.state.strikes === 0 || this.state.strikes === 1){
+            this.setState({
+                strikes: this.state.strikes + 1
+            })
+        } 
+    };
+
 
 
     render (){
@@ -47,7 +58,7 @@ class Dashboard extends React.Component {
                         <button onClick={this.increaseBalls}>Ball</button>
                     </div>
                     <div>
-                        <button>Foul</button>
+                        <button onClick={this.handleFoul}>Foul</button>
                         <button onClick={this.reset}>Hit</button>
                     </div>
                 </div>
