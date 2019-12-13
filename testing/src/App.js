@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+export const sum = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+
+
 function App() {
   return (
     <div className="App">
@@ -15,8 +19,9 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
+          data-testid='react-docs-link'
         >
-          Learn React
+          LEARN REACT
         </a>
       </header>
     </div>
