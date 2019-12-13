@@ -6,9 +6,16 @@ class Dashboard extends React.Component {
     }
     render (){
         return (
-            <div>
-            
-            Dashboard
+            <div className='buttonDiv'>
+                <div>
+                    <button>Strike</button>
+                    <button>Ball</button>
+                </div>
+                <div>
+                    <button>Foul</button>
+                    <button>Hit</button>
+                </div>
+
             </div>
         )
     }
