@@ -1,6 +1,7 @@
 import React from 'react';
 import Display from './Display';
 
+
 class Dashboard extends React.Component {
     constructor(){
         super()
@@ -9,7 +10,7 @@ class Dashboard extends React.Component {
             strikes: 0
         }
     }
-
+    
     handleHit = (e) => {
         // e.preventDefault();
         this.setState({
@@ -17,21 +18,20 @@ class Dashboard extends React.Component {
             strikes: 0,
         })
     }
-
+    
     handleBalls = (e) => {
         // e.preventDefault();
         this.setState({
             balls: this.state.balls + 1,
         })
     };
-
+    
     handleStrikes = () =>{
         this.setState({
             strikes: this.state.strikes + 1
         })
     };
-
-
+    
     handleFoul = ()=>{
         if (this.state.strikes === 0 || this.state.strikes === 1){
             this.setState({
@@ -40,8 +40,20 @@ class Dashboard extends React.Component {
         } 
     };
 
-    //- balls and strikes reset to 0 when a player reaches 3 strikes or 4 balls.
-
+    /*- balls and strikes reset to 0 when a player reaches 3 strikes or 4 balls. */
+    
+    resetWhenMaxedOut = () => {
+        if (this.state.balls === 4 || this.state.strikes === 3 ){
+            this.setState({
+                balls: 0,
+                strikes: 0
+            })
+        }
+    };
+    
+    componentDidUpdate(){
+        this.resetWhenMaxedOut();
+    }
 
 
     render (){
