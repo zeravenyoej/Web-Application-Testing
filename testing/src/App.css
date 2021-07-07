@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+  margin: 5%;
+  background: rgb(17, 82, 8);
+  padding: 4%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dashed white;
+}
+
+.appDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.displayBigDiv {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  color: black;
+  border: 2px solid white;
+  padding: 2%;
+  width: 80%;
+}
+
+.displayBoxes {
+  background: rgb(223, 215, 215);
+  text-decoration: underline;
+  border: 2px dashed white;
+  max-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: space-between; */
+  /* align-content: space-evenly; */
+  /* align-items: space-evenly; */
+  width: 20%;
+}
+
+p {
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.buttonDiv {
+  display: flex;
+  margin-top: 4%;
+}
+
+button {
+  margin: 5%;
+  width: 200px;
+  height: 50px;
+  background: black;
+  color: white;
+  font-size: 1.6rem;
+}
